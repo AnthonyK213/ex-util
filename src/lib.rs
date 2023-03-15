@@ -3,7 +3,7 @@ use std::ffi::{c_char, CStr, CString};
 #[macro_export]
 macro_rules! str_try_parse {
     ($c_buf: expr, $default: expr) => {
-        match c_buf_to_string($c_buf) {
+        match str_buf_to_string($c_buf) {
             Ok(v) => v,
             Err(_) => return $default,
         }
